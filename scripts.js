@@ -1,5 +1,6 @@
 var refreshRate = document.getElementById('refreshRate').value;
-
+var secondRotations = 0;
+var lastFullRotation;
 /*
 TODO: Fix css transition
 TODO: Support for different timezones
@@ -11,7 +12,7 @@ const openNav = () => {
 }
 
 const closeNav = () => {
-		document.getElementById('sideBar').style.width = '0';
+	document.getElementById('sideBar').style.width = '0';
 	//document.getElementById('main').style.marginLeft = '0';
 }
 
@@ -35,7 +36,13 @@ const setDigitalTime = (time) => {
 }
 
 const setSecondHand = (seconds) => {
-	let rotation = seconds * 6;
+	if (seconds * 6 === 0 && lastFullRotation !== (secondRotations * 360) + (360)) {
+		lastFullRotation = (secondRotations * 360) + (seconds * 6);
+		secondRotations += 1;
+		console.log(lastFullRotation);
+	} 
+	//console.log(`rotations completed: ${secondRotations}`)
+	let rotation = (secondRotations * 360) + (seconds * 6);
 	document.getElementById('secondHand').style.transform = `rotate(${rotation}deg)`;
 }
 
@@ -57,6 +64,7 @@ const setAnalogTime = (time) => {
 	let seconds = time.getSeconds();
 	let minutes = time.getMinutes();
 	let hours = time.getHours();
+
 	setSecondHand(seconds);
 	setMinuteHand(minutes);
 	setHourHand(hours);
@@ -64,10 +72,9 @@ const setAnalogTime = (time) => {
 
 const mainLoop = () => {
 	let currentDate = getCurrentDate();
-	console.log(refreshRate);
 	setAnalogTime(currentDate);
 	setDigitalTime(currentDate);
-	setTimeout(mainLoop, refreshRate, refreshRate);
+	setTimeout(mainLoop, refreshRate);
 }
 
-mainLoop(refreshRate);
+mainLoop();

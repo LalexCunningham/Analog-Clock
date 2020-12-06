@@ -102,6 +102,7 @@ body {
 	transform-origin: 50% 100%;
 	/* TODO */
 	transition: 0.2s; 
+	
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: red;
 }
