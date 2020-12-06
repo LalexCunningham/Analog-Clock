@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript Clock</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<div id="sideBar" class="sidebar">
+		<div class="closebtn" onclick="closeNav()">&times</div>
+		<div class="parameters">
+			<p>Timezone:</p>
+			<select id="timezone">
+				<option>UTC-1</option>
+				<option>UTC</option>
+				<option>UTC+1</option>
+			</select>
+			<p>Refresh-rate:</p>
+			<select id="refreshRate" oninput="setRefreshRate(value)">
+				<option value="100">0.1s</option>
+				<option value="200">0.2s</option>
+				<option value="500">0.5s</option>
+				<option value="1000" selected="selected">1s</option>
+				<option value="2000">2s</option>
+			</select>
+			<p>Background Color:</p>
+			<input class="color" type="color" name="color" oninput="setBackgroundColor(value)" value="">
+		</div>
+	</div>	
+	<div class="openbtn" onclick="openNav()">&#9776;</div>
+	<div class="clock" id="mainClock">
+		<div id="center"></div>
+		<div id="hourHand"></div>
+		<div id="minuteHand"></div>
+		<div id="secondHand"></div>
+	</div>
+	<h2 id="digitalTime"></h2>
+	<script type="text/javascript" src="scripts.js"></script>
+</body>
+</html>
