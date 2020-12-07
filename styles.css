@@ -71,6 +71,8 @@ body {
 	transform: rotate(50deg);
 	transform-origin: 50% 100%;
 
+	transition: 0.2s;
+
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
 }
@@ -86,6 +88,8 @@ body {
 	transform: rotate(180deg);
 	transform-origin: 50% 100%;
 
+	transition: 0.5s;
+
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
 }
@@ -100,7 +104,7 @@ body {
 	top: 20px;
 	transform: rotate(0deg);
 	transform-origin: 50% 100%;
-	/* TODO */
+
 	transition: 0.2s; 
 	
   	-webkit-font-smoothing: antialiased;

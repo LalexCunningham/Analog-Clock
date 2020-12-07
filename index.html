@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div id="sideBar" class="sidebar">
-		<div class="closebtn" onclick="closeNav()">&times</div>
+		<div class="closebtn" onclick="closeSideBar()">&times</div>
 		<div class="parameters">
 			<p>Timezone:</p>
 			<select id="timezone">
@@ -27,7 +27,7 @@
 			<input class="color" type="color" name="color" oninput="setBackgroundColor(value)" value="">
 		</div>
 	</div>	
-	<div class="openbtn" onclick="openNav()">&#9776;</div>
+	<div class="openbtn" onclick="openSideBar()">&#9776;</div>
 	<div class="clock" id="mainClock">
 		<div id="center"></div>
 		<div id="hourHand"></div>
