@@ -108,7 +108,7 @@ body {
 	transition: 0.2s; 
 	
   	-webkit-font-smoothing: antialiased;
-  	-moz-osx-font-smoothing: red;
+  	outline: 1px solid transparent;
 }
 
 #digitalTime {
